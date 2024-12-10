@@ -1,8 +1,13 @@
-import { configureStore } from '@reduxjs/toolkit'
-import mainReducer from '../reducers'
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import mainReducer from "../reducers";
+import favouriteReducer from "../reducers/favouriteReducer";
 
 const store = configureStore({
   reducer: mainReducer,
-})
+});
 
-export default store
+const myReduxStore = combineReducers({
+  favourite: favouriteReducer,
+});
+
+export default store;
